@@ -1,0 +1,16 @@
+{"question": "Which index type is the usual choice for full-text search on tsvector columns?", "source": "postgres-indexing.md", "evidence": "usual choice for full-text search on `tsvector` columns"}
+{"question": "When does a multicolumn B-tree index help a query?", "source": "postgres-indexing.md", "evidence": "most useful when queries filter on the leading column"}
+{"question": "Why should an IVFFlat index be created after the table already has data?", "source": "postgres-indexing.md", "evidence": "cluster centres are computed at build time"}
+{"question": "What kind of table is a BRIN index a good fit for?", "source": "postgres-indexing.md", "evidence": "append-only events table ordered by timestamp"}
+{"question": "What does the no-cache directive actually mean?", "source": "http-caching.md", "evidence": "requires revalidation with the origin before every reuse"}
+{"question": "What status code does the server return when the ETag still matches?", "source": "http-caching.md", "evidence": "304 Not Modified"}
+{"question": "Why does Vary: Cookie hurt shared caching?", "source": "http-caching.md", "evidence": "nearly every request carries a different cookie"}
+{"question": "How can static assets with a content hash be cached safely for a year?", "source": "http-caching.md", "evidence": "max-age=31536000, immutable"}
+{"question": "How quickly must the primary acknowledge a SEV1 page?", "source": "oncall-handbook.md", "evidence": "acknowledge a SEV1 page within 15 minutes"}
+{"question": "When does an on-call shift start?", "source": "oncall-handbook.md", "evidence": "start every Monday at 10:00"}
+{"question": "Who gets paged for incidents involving payments?", "source": "oncall-handbook.md", "evidence": "payments team lead is paged"}
+{"question": "How much time off do engineers get for a week of primary on-call?", "source": "oncall-handbook.md", "evidence": "one day of time off in lieu"}
+{"question": "How do I run blocking code without stalling the event loop?", "source": "python-asyncio.txt", "evidence": "use asyncio.to_thread"}
+{"question": "What happens to the other tasks when one task in a TaskGroup fails?", "source": "python-asyncio.txt", "evidence": "the remaining tasks are cancelled"}
+{"question": "Why must code that catches broad exceptions re-raise CancelledError?", "source": "python-asyncio.txt", "evidence": "otherwise the task cannot be cancelled"}
+{"question": "How can I limit the number of concurrent HTTP requests?", "source": "python-asyncio.txt", "evidence": "asyncio.Semaphore to limit concurrency"}

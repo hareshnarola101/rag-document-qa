@@ -1,0 +1,25 @@
+Notes on Python asyncio
+
+The event loop runs one coroutine at a time on a single thread. A coroutine gives control
+back to the loop only at an await. That is why one blocking call, such as time.sleep or a
+synchronous database driver, stalls every other task running on the same loop.
+
+To run blocking code without stalling the loop, use asyncio.to_thread, which runs a function
+in a worker thread and returns an awaitable. CPU-heavy work is better sent to a process pool,
+because threads still share the global interpreter lock.
+
+asyncio.gather runs several awaitables concurrently and returns their results in the order
+they were passed. By default, if one of them raises, gather propagates the first exception
+but the other tasks keep running in the background unless you cancel them yourself.
+
+asyncio.TaskGroup, added in Python 3.11, is the structured alternative. When any task in the
+group fails, the remaining tasks are cancelled and the errors are raised together as an
+ExceptionGroup when the async with block exits. Prefer TaskGroup in new code.
+
+Cancellation works by raising CancelledError inside the task at its current await. Code that
+catches broad exceptions must re-raise CancelledError, otherwise the task cannot be cancelled
+cleanly. asyncio.timeout, also added in Python 3.11, cancels the enclosed block when the
+deadline passes and converts the cancellation into a TimeoutError.
+
+Use asyncio.Semaphore to limit concurrency, for example to keep at most ten HTTP requests in
+flight against a rate-limited API.
