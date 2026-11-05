@@ -1,7 +1,7 @@
 # rag-document-qa
 
 [![CI](https://github.com/hareshnarola101/rag-document-qa/actions/workflows/ci.yml/badge.svg)](https://github.com/hareshnarola101/rag-document-qa/actions/workflows/ci.yml)
-[![M8ven Score](https://m8ven.ai/badge/mcp/hareshnarola101/rag-document-qa)](https://m8ven.ai/mcp/hareshnarola101/rag-document-qa?s=readme)
+[![M8ven Score](https://m8ven.ai/badge/mcp/hareshnarola101-rag-document-qa-m4npdg)](https://m8ven.ai/mcp/hareshnarola101-rag-document-qa-m4npdg?s=readme)
 
 A FastAPI service that answers questions about your own documents and shows where each answer
 came from. Upload PDFs, Markdown or text files; ask a question; get an answer with citations
